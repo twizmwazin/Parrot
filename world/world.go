@@ -1,7 +1,7 @@
 package world
 
-//repersents the contain of the world.
-//allows you to obtain diffrent chunks of world
+//represents the contain of the world.
+//allows you to obtain different chunks of world
 type World interface {
 	//getChunkAt returns a chuck at the given coordinates
 	//if no chunk will create one at given coordinates
@@ -12,9 +12,9 @@ type World interface {
 
 //Chunk repersents chunks within the game
 //when changed will change the actual mbt files
-//of the game with spesified changes
+//of the game with specified changes
 type Chunk interface {
-	//getBlockAt retuns a block at the given coordinates
+	//getBlockAt returns a block at the given coordinates
 	//if no block at location will error saying no block at location
 	getBlockAt(x int, y int, z int) Block
 
@@ -30,16 +30,16 @@ type Chunk interface {
 	updateItem(item Item) bool
 
 	//placeItem places the item in the current Chunk
-	//returns if it was succsessfully added
+	//returns if it was successfully added
 	placeItem(item Item) bool
 
-	//getLocation returns the location of the the Chunk
+	//getLocation returns the location of the Chunk
 	getLocation() (int, int)
 }
 
 //repersents the blocks of map
 type Block interface {
-	//getLocation returns the location of the the Block
+	//getLocation returns the location of the Block
 	getLocation() (int, int, int)
 
 	//TODO: change type of get type
@@ -52,10 +52,10 @@ type Block interface {
 }
 
 //might not be perfect name
-//repersents all other things that are not blocks
-//meant to be genaric to all other types of objects
+//represents all other things that are not blocks
+//meant to be generic to all other types of objects
 type Item interface {
-	//getLocation returns the location of the the Item
+	//getLocation returns the location of the Item
 	getLocation() (float32, float32, float32)
 
 	//TODO: change type of get type
