@@ -16,7 +16,7 @@ type World interface {
 type Chunk interface {
 	//getBlockAt returns a block at the given coordinates
 	//if no block at location will error saying no block at location
-	getBlockAt(x int, y int, z int) Block
+	getBlockAt(x int, y int, z int) (Block, error)
 
 	//updateBlock adds a given block to map or updates block currently there
 	//returns a bool on weather it was added correctly
@@ -56,7 +56,7 @@ type Block interface {
 //meant to be generic to all other types of objects
 type Item interface {
 	//getLocation returns the location of the Item
-	getLocation() (float32, float32, float32)
+	getLocation() (float64, float64, float64)
 
 	//TODO: change type of get type
 	//returns the type of the Item
